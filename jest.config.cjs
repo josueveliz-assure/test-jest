@@ -9,6 +9,5 @@ module.exports = {
     testPathIgnorePatterns: ['/node_modules/', 'coverage', 'dist'],
     collectCoverage: true,
     collectCoverageFrom: ['**/*.{js,jsx}', '!**/node_modules/**', '!**/jest.config.cjs', '!**/coverage/**'],
-    coverageReporters: ['json', 'lcov', 'text', 'clover', 'html'],
     coverageDirectory: 'coverage',
 };
