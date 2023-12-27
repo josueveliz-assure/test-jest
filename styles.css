@@ -75,3 +75,7 @@
 .reset:hover {
     background-color: #fcc0bf;
 }
+
+.key-gray:hover {
+    background-color: #d9d9d9;
+}

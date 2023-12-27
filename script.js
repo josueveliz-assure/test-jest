@@ -25,7 +25,7 @@ const addOperation = (operation) => {
     if(lastOperation !== ''){
         equal();
     }
-    if (display.innerHTML === '0') {
+    if (display.innerHTML === '0' && lastOperation === '') {
         lastOperation = operation;
         return;
     }
@@ -36,7 +36,7 @@ const addOperation = (operation) => {
 }
 
 const equal = () => {
-    if (display.innerHTML === '0') {
+    if (display.innerHTML === '0' && lastOperation === '') {
         return;
     }
 
