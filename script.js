@@ -53,8 +53,6 @@ const equal = () => {
         case '/':
             totalSoFar /= parseFloat(display.innerHTML);
             break;
-        default:
-            totalSoFar = parseFloat(display.innerHTML);
     }
 
     display.innerHTML = totalSoFar;
@@ -64,5 +62,7 @@ const equal = () => {
 const reset = () => {
     display.innerHTML = 0;
     totalSoFar = 0;
-    operationFlag = false;
+    lastOperation = '';
 }
+
+module.exports =  { addNumber, addOperation, equal, reset };
