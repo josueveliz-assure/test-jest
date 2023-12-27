@@ -24,7 +24,6 @@ const addNumber = (num) => {
 }
 
 const addOperation = (operation) => {
-    console.log("asd");
     if (display.innerHTML === '0') {
         return;
     }
