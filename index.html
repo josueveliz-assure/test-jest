@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Calculator</title>
 </head>
 <body>
     <main class="container">
         <div class="calculator">
-            <div class="display" id="display">
-            </div>
+            <div class="display" id="display">0</div>
             <div class="keys">
-                <button class="key reset">C</button>
-                <button class="key key-7">7</button>
-                <button class="key key-8">8</button>
-                <button class="key key-9">9</button>
-                <button class="key key-division key-gray">÷</button>
-                <button class="key key-4">4</button>
-                <button class="key key-5">5</button>
-                <button class="key key-6">6</button>
-                <button class="key key-multiply key-gray">x</button>
-                <button class="key key-1">1</button>
-                <button class="key key-2">2</button>
-                <button class="key key-3">3</button>
-                <button class="key key-minus key-gray">-</button>
-                <button class="key key-0">0</button>
-                <button class="key key-decimal">.</button>
+                <button class="key reset" onclick="reset()">C</button>
+                <button class="key key-7" onclick="addNumber(7)">7</button>
+                <button class="key key-8" onclick="addNumber(8)">8</button>
+                <button class="key key-9" onclick="addNumber(9)">9</button>
+                <button class="key key-division key-gray" onclick="addOperation('/')">÷</button>
+                <button class="key key-4" onclick="addNumber(4)">4</button>
+                <button class="key key-5" onclick="addNumber(5)">5</button>
+                <button class="key key-6" onclick="addNumber(6)">6</button>
+                <button class="key key-multiply key-gray" onclick="addOperation('*')">x</button>
+                <button class="key key-1" onclick="addNumber(1)">1</button>
+                <button class="key key-2" onclick="addNumber(2)">2</button>
+                <button class="key key-3" onclick="addNumber(3)">3</button>
+                <button class="key key-minus key-gray" onclick="addOperation('-')">-</button>
+                <button class="key key-0" onclick="addNumber(0)">0</button>
+                <button class="key key-decimal"  onclick="addNumber('.')">.</button>
                 <button class="key key-equal key-green">=</button>
-                <button class="key key-add key-gray">+</button>
+                <button class="key key-add key-gray" onclick="addOperation('+')">+</button>
             </div>
         </div>
     </main>

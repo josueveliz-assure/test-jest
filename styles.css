@@ -51,6 +51,10 @@
     background-color: white;
 }
 
+.key:hover {
+    background-color: rgb(241, 241, 241);
+}
+
 .reset {
     grid-column: 4 / 4;
     background-color: #fecbca;
@@ -64,15 +68,10 @@
     background-color: #cdffcc;
 }
 
-.key:hover {
-    background-color: rgb(241, 241, 241);
+.key-green:hover {
+    background-color: #90fd8e;
 }
 
 .reset:hover {
     background-color: #fcc0bf;
-}s
-
-.key-gray {
-    background-color: rgb(218, 211, 211);
 }
-
