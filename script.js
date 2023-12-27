@@ -1,10 +1,9 @@
 const display = document.getElementById('display');
 
 let totalSoFar = 0;
-let operationFlag = false;
+let lastOperation = '';
 
 const addNumber = (num) => {
-    console.log(totalSoFar);
     if (num === '.') {
         if (display.innerHTML.indexOf('.') >= 0) {
             return;
@@ -19,23 +18,29 @@ const addNumber = (num) => {
         return;
     }
 
-
     display.innerHTML += num;
 }
 
 const addOperation = (operation) => {
+    if(lastOperation !== ''){
+        equal();
+    }
+    if (display.innerHTML === '0') {
+        lastOperation = operation;
+        return;
+    }
+
+    lastOperation = operation;
+    totalSoFar = parseFloat(display.innerHTML);
+    display.innerHTML = '0';
+}
+
+const equal = () => {
     if (display.innerHTML === '0') {
         return;
     }
 
-    if (!operationFlag) {
-        totalSoFar = parseFloat(display.innerHTML);
-        operationFlag = true;
-        display.innerHTML = '0';
-        return;
-    }
-
-    switch (operation) {
+    switch(lastOperation){
         case '+':
             totalSoFar += parseFloat(display.innerHTML);
             break;
@@ -48,17 +53,12 @@ const addOperation = (operation) => {
         case '/':
             totalSoFar /= parseFloat(display.innerHTML);
             break;
-    }
-    display.innerHTML = '0';
-}
-
-const equal = () => {
-    if (display.innerHTML === '0') {
-        return;
+        default:
+            totalSoFar = parseFloat(display.innerHTML);
     }
 
-    const result = eval(display.innerHTML);
-    display.innerHTML = result;
+    display.innerHTML = totalSoFar;
+    lastOperation = '';
 }
 
 const reset = () => {
